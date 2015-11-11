@@ -14,5 +14,3 @@ var StudentView = function() {
 		}
 	});
 };
-
-a random crap of text lines
