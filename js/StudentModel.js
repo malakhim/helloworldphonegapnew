@@ -9,6 +9,7 @@ var StudentModel = function(){
 
 	// Get student list
 	this.retrieveStudentList = function(iCallback){
+		console.log("hi");
 		if(this.db){
 			this.db.transaction(function(iTx){
 				iTx.executeSql("SELECT * FROM STUDENTS", [],
