@@ -4,7 +4,7 @@ var DatabaseUtility = new function() {
 	// this.init = function(){
 		// Open database
 		try{
-			this.db = window.openDatabase({name:"todo"});
+			this.db = window.openDatabase("todo","1.0","todo DB",10000000);
 		}
 		catch(iException){
 			console.log(iException);
