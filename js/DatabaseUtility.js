@@ -4,9 +4,10 @@ var DatabaseUtility = new function() {
 	// this.init = function(){
 		// Open database
 		try{
-			this.db = window.sqlitePlugin.openDatabase({name:"todo"});
+			this.db = window.openDatabase({name:"todo"});
 		}
 		catch(iException){
+			console.log(iException);
 			this.db = false;
 		}
 	// }
