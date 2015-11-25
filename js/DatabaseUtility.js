@@ -1,5 +1,5 @@
 // Class defined using a singleton
-var DatabaseUtility = new function() {
+var DatabaseUtility = function() {
 
 	// this.init = function(){
 		// Open database
