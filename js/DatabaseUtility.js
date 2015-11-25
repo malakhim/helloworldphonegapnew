@@ -101,10 +101,10 @@ var DatabaseUtility = function() {
 								message: 'No todo items available.'});
 							}
 					},
-					function(){
+					function(err){
 						iCallback({
 							success: false,
-							message: 'Failed to retrieve records.',
+							message: 'Error processing SQL: '+err.code,
 						});
 					}
 				);
