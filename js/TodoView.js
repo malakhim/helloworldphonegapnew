@@ -10,7 +10,7 @@ var TodoView = function() {
 			}
 		}
 		else {
-			$('#container').html(''+iResults.todo+'');
+			$('#container').html(''+iResults.message+'');
 		}
 	});
 };
