@@ -16,7 +16,7 @@ var DatabaseUtility = new function() {
 
 	// Create todo table if it doesn't exist
 	this.db.transaction(function(iTx){
-		tx.executeSql("CREATE TABLE IF NOT EXISTS " + "todo(ID INTEGER PRIMARY KEY ASC, todo TEXT, completed BOOLEAN",[]);
+		iTx.executeSql("CREATE TABLE IF NOT EXISTS " + "todo(ID INTEGER PRIMARY KEY ASC, todo TEXT, completed BOOLEAN",[]);
 	});
 
 	this.setRow = function(todoText){
