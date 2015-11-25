@@ -84,31 +84,30 @@ var DatabaseUtility = new function() {
 
 
 	this.retrieveToDoList = function(iCallback){
-			if(this.db){
-				this.db.transaction(function(iTx){
-					iTx.executeSql("SELECT * FROM todo", [],
-						function(iTx, iResults){
-							if(iResults.rows.length > 0){
-								iCallback({
-									success: true,
-									data: iResults.rows,
-								});
-							}
-							else{
-								iCallback({
-									success: false,
-									message: 'No todo items available.'});
-								}
-						},
-						function(){
+		if(this.db){
+			this.db.transaction(function(iTx){
+				iTx.executeSql("SELECT * FROM todo", [],
+					function(iTx, iResults){
+						if(iResults.rows.length > 0){
 							iCallback({
-								success: false,
-								message: 'Failed to retrieve records.',
+								success: true,
+								data: iResults.rows,
 							});
 						}
-					);
-				});
-			}
+						else{
+							iCallback({
+								success: false,
+								message: 'No todo items available.'});
+							}
+					},
+					function(){
+						iCallback({
+							success: false,
+							message: 'Failed to retrieve records.',
+						});
+					}
+				);
+			});
 		}
 	}
 
