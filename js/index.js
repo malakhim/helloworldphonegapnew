@@ -34,7 +34,7 @@ var app = {
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
-        StudentView();
+        var view = new ToDoView();
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
