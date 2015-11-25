@@ -106,7 +106,7 @@ var DatabaseUtility = function() {
 				function(err){
 					iCallback({
 						success: false,
-						message: 'Error processing SQL: '+err.code,
+						message: 'Error processing SQL: '+err.code + " with error: " + err.message,
 					});
 				}
 			);
