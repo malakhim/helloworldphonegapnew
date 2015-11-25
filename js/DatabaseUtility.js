@@ -127,7 +127,7 @@ var DatabaseUtility = new function() {
 								success: false,
 								message: 'No items found',
 							});
-						},
+						}},
 						function(){
 							iCallback({
 								success: false,
