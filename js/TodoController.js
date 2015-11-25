@@ -11,7 +11,7 @@ var TodoController = function() {
 	 // };
 
 	 // DB Migration, in order to ensure database is always filled
-	 this.initialize = function(){
+	 // this.initialize = function(){
 	 	// Items we wish to ensure are always in the database at initialisation
 		var toDoItems = ["Create Todo List","Create Database"];
 
@@ -21,7 +21,7 @@ var TodoController = function() {
 			// TODO: Check if items exist already
 			this.model.createTodo(toDoItems[index]);
 		}
-	}
+	// }
 
 	this.getAllItems = function(iCallback){
 		this.model.getAll(iCallback);
