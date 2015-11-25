@@ -1,7 +1,7 @@
 // Class defined using a singleton
-var ToDoController = function() {
+var TodoController = function() {
 	 // Get the model object
-	 this.model = new ToDoModel();
+	 this.model = new TodoModel();
 	 // Get todo list
 	 // this.getToDoList = function(iCallback) { 
 	 // 	this.model.retrieveToDoList(function(iResults) {
@@ -17,7 +17,7 @@ var ToDoController = function() {
 
 		// Insert items
 		var index;
-		for(index = 0; index < toDoItems.length, index++){
+		for(index = 0; index < toDoItems.length; index++){
 			// TODO: Check if items exist already
 			this.model.createTodo(toDoItems[index]);
 		}

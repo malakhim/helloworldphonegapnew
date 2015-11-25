@@ -1,6 +1,6 @@
-var ToDoView = function() {
+var TodoView = function() {
 	// Get the controller object
-	this.controller = new ToDoController();
+	this.controller = new TodoController();
 	// Get the student list
 	this.controller.getAllItems(function(iResults) {
 		if(iResults.success) {

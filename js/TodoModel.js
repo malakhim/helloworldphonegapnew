@@ -1,5 +1,5 @@
 // Class defined using a singleton
-var ToDoModel = function(){
+var TodoModel = function(){
 	this.db = new DatabaseUtility();
 
 	this.createTodo = function(todoText){
