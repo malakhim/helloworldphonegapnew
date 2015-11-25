@@ -86,29 +86,30 @@ var DatabaseUtility = function() {
 
 	this.retrieveToDoList = function(iCallback){
 		if(this.db){
-			this.db.transaction(function(iTx){
-				iTx.executeSql("SELECT * FROM todo", [],
-					function(iTx, iResults){
-						if(iResults.rows.length > 0){
-							iCallback({
-								success: true,
-								data: iResults.rows,
-							});
-						}
-						else{
-							iCallback({
-								success: false,
-								message: 'No todo items available.'});
+			this.db.transaction(
+				function(iTx){
+					iTx.executeSql("SELECT * FROM todo", [],
+						function(iTx, iResults){
+							if(iResults.rows.length > 0){
+								iCallback({
+									success: true,
+									data: iResults.rows,
+								});
 							}
-					},
-					function(err){
-						iCallback({
-							success: false,
-							message: 'Error processing SQL: '+err.code,
-						});
-					}
-				);
-			});
+							else{
+								iCallback({
+									success: false,
+									message: 'No todo items available.'
+								});
+							}
+						})},
+				function(err){
+					iCallback({
+						success: false,
+						message: 'Error processing SQL: '+err.code,
+					});
+				}
+			);
 		}
 	}
 
